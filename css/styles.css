@@ -2,41 +2,70 @@ body {
     font-family: 'Roboto Mono', sans-serif;
     margin: auto;
     color: #36332d;
+    background-color: #f0f3bd;
 }
 
 /****************
  *    Header    *
  ****************/
-
-#icon{
+#logo{
+    display: flex;
+    align-items: center;
+}
+#tree{
     height: 40px;
     width: 40px;
     margin-right: 20px;
 }
+#icons{
+    margin-top: 3px;
+    margin-right: 5px;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+}
+#notification{
+    height: 50px;
+    width: 50px;
+}
+#settings{
+    margin-top: 3px;
+    padding: 8px;
+    height: 28px;
+    width: 28px;
+}
 header{
     width: 100%;
-    background-color: #63B995;
+    display: flex;
+    justify-content: center;
+    background-color: #02c39a;
     border-bottom: 1px solid #00000055;
     box-shadow: 0 0 5px #000000bd;
 }
 #headerContainer{
-    width: 1150px;
-    margin: auto;
+    max-width: 1150px;
+    width: 100%;
     height: 32px;
     display: flex;
     flex-direction: row;
     align-items: center;
+    justify-content: space-between;
     margin-top: 0;
     padding: 20px;
-    margin-left: 15px;
 }
 
 /****************
  * Main content *
  ****************/
+#dashboard{
+    max-width: 1200px;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+}
 #wrapper{
     font-family: 'Varela Round', sans-serif;
-    width: 1150px;
+    max-width: 1150px;
     font-size: 25px;
     padding: 0 40px 0 40px;
 }
@@ -54,8 +83,7 @@ header{
  ******************/
 
 #leftcontainer{
-    max-width: 250px;
-    width: 100%;
+    min-width: 250px;
     min-height: 100px;
     height: 100%;
     margin: 0 40px 0 0;
@@ -97,7 +125,7 @@ header{
 .sensor-data{
     display: none;
     font-size: 15px;
-    margin: 0 0 45px 45px;
+    margin: 0 0 0px 45px;
 }
 #button-wrapper{
     display: flex;
@@ -126,17 +154,16 @@ header{
     width: 100%;
     max-width: 600px;
     height: 300px;
+    margin-bottom: 30px;
 }
 #floating-panel {
-    background-color: #fff;
     padding: 5px;
     text-align: center;
     font-family: 'Roboto','sans-serif';
     line-height: 30px;
     padding-left: 10px;
-  }
-  #floating-panel {
-    background-color: #fff;
+}
+#floating-panel {
     left: 25%;
     padding: 5px;
-  }
+}

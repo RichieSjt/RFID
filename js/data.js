@@ -13,11 +13,19 @@ firebase.initializeApp(firebaseConfig);
 var database = firebase.database();
 
 //Path to the database data
-var latitud1 = firebase.database().ref('devices/Sensor/lat');
-var longitud1 = firebase.database().ref('devices/Sensor/long');
-var humedad1 = firebase.database().ref('devices/Sensor/humedad');
+var n_sensores = firebase.database().ref('N-sensores')
+var latitud1 = firebase.database().ref('devices/Sensor1/lat');
+var longitud1 = firebase.database().ref('devices/Sensor1/long');
+var humedad1 = firebase.database().ref('devices/Sensor1/humedad');
+
 
 //Retrieving data
+n_sensores.on('value', function(snapshot) {
+    var sens = String(snapshot.val());
+    $('#leftcontainerheader').empty();
+    $('#leftcontainerheader').append("Sensores activos: " + sens);
+});
+
 latitud1.on('value', function(snapshot) {
     var lat = String(snapshot.val());
     $('#latitud1').empty();
