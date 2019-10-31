@@ -3,6 +3,11 @@ body {
     margin: auto;
     color: #36332d;
 }
+
+/****************
+ *    Header    *
+ ****************/
+
 #icon{
     height: 40px;
     width: 40px;
@@ -94,14 +99,36 @@ header{
  * Right container *
  *******************/
 
-#mapafeik{
+/*#mapafeik{
+    width: 100%;
+    max-width: 500px;
+    height: 300px;
+}*/
+
+#map {
     width: 100%;
     max-width: 500px;
     height: 300px;
 }
-
-/*#map {
-    width: 100%;
-    max-width: 300px;
-    height: 300px;
-}*/
+#floating-panel {
+    position: absolute;
+    top: 10px;
+    left: 25%;
+    z-index: 5;
+    background-color: #fff;
+    padding: 5px;
+    border: 1px solid #999;
+    text-align: center;
+    font-family: 'Roboto','sans-serif';
+    line-height: 30px;
+    padding-left: 10px;
+  }
+  #floating-panel {
+    background-color: #fff;
+    border: 1px solid #999;
+    left: 25%;
+    padding: 5px;
+    position: absolute;
+    top: 10px;
+    z-index: 5;
+  }

@@ -81,31 +81,39 @@
     
             <!--Right container-->
     
-            <iframe id = "mapafeik" src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3217.503002315287!2d-99.13613321277778!3d19.283304904240012!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x85ce01059b077ca1%3A0x129534395a02e72a!2sTecnol%C3%B3gico%20de%20Monterrey%20Campus%20Ciudad%20de%20M%C3%A9xico!5e0!3m2!1ses!2smx!4v1572472939380!5m2!1ses!2smx" width="600" height="450" frameborder="0" style="border:0;" allowfullscreen=""></iframe>
-            <!--<div id="map"></div>  Mapa dev-->
+            <!--<iframe id = "mapafeik" src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3217.503002315287!2d-99.13613321277778!3d19.283304904240012!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x85ce01059b077ca1%3A0x129534395a02e72a!2sTecnol%C3%B3gico%20de%20Monterrey%20Campus%20Ciudad%20de%20M%C3%A9xico!5e0!3m2!1ses!2smx!4v1572472939380!5m2!1ses!2smx" 
+            width="600" height="450" frameborder="0" style="border:0;" allowfullscreen=""></iframe> -->
+            <!--<div id="map"></div>-->
+            <div id="floating-panel">
+                <button onclick="toggleHeatmap()">Toggle Heatmap</button>
+                <button onclick="changeGradient()">Change gradient</button>
+                <button onclick="changeRadius()">Change radius</button>
+                <button onclick="changeOpacity()">Change opacity</button>
+              </div>
+              <div id="map"></div>
         </div>
         
     </div>
 
     <script src="js/jquery-3.3.1.min.js"></script>
-    <script src="js/smooth-scroll.min.js"></script>
 
     <script src="https://www.gstatic.com/firebasejs/7.2.2/firebase-app.js"></script>
     <script src="https://www.gstatic.com/firebasejs/7.2.2/firebase-database.js"></script>
 
     <script src="js/data.js"></script>
+
+    <script src="js/disable.js"></script>
+    <script type="text/javascript"
+        src="https://maps.googleapis.com/maps/api/js?key=YOUR_API_KEY&libraries=visualization">
+    </script>
+
+    <script src="js/heatmap.js"></script>
+
+    <script async defer
+      src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDYQPLKaVjiHkqzhnA8Cpzj3b2rvti8ReU&libraries=visualization&callback=initMap">
+    </script>
     
     <!--
-    <script>
-        function initMap() {
-            var uluru = {lat: -25.344, lng: 131.036};
-            // The map, centered at Uluru
-            var map = new google.maps.Map(
-                document.getElementById('map'), {zoom: 4, center: uluru});
-            // The marker, positioned at Uluru
-            var marker = new google.maps.Marker({position: uluru, map: map});
-        }
-    </script>
     <script async defer
         src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDYQPLKaVjiHkqzhnA8Cpzj3b2rvti8ReU&callback=initMap">
     </script>
