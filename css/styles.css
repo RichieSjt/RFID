@@ -112,11 +112,10 @@ header{
 }
 .dot{
     border-radius: 10px;
-    border: 1px solid grey;
     height: 10px;
     width: 10px;
-    background-color: green;
-
+    background-color: white;
+    box-shadow: -2px 0 2px #64646490;
 }
 .expand {
     height: 35px;

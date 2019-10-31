@@ -14,37 +14,51 @@ var database = firebase.database();
 
 //Path to the database data
 var n_sensores = firebase.database().ref('N-sensores')
-var latitud1 = firebase.database().ref('devices/Sensor1/lat');
-var longitud1 = firebase.database().ref('devices/Sensor1/long');
-var humedad1 = firebase.database().ref('devices/Sensor1/humedad');
+var sensores = firebase.database().ref('devices');
 
-
-//Retrieving data
 n_sensores.on('value', function(snapshot) {
     var sens = String(snapshot.val());
     $('#leftcontainerheader').empty();
     $('#leftcontainerheader').append("Sensores activos: " + sens);
 });
 
-latitud1.on('value', function(snapshot) {
-    var lat = String(snapshot.val());
-    $('#latitud1').empty();
-    $('#latitud1').append("Latitud: " + lat);
-});
+//Retrieving data
+for(let i = 1; i < 4; i++){
+    var nombre = "Sensor" + i;
+    sensores.child(nombre).child("lat").on('value', function(snapshot) {
+        var lat = String(snapshot.val());
+        var id = "#latitud" + i;
+        $(id).empty();
+        $(id).append("Latitud: " + lat);
+    });
+    sensores.child(nombre).child("long").on('value', function(snapshot) {
+        var long = String(snapshot.val());
+        var id = "#longitud" + i;
+        $(id).empty();
+        $(id).append("Longitud: " + long);
+    });
+    sensores.child(nombre).child("humedad").on('value', function(snapshot) {
+        var hum = String(snapshot.val());
+        var id = "#humedad" + i;
+        $(id).empty();
+        $(id).append("Humedad: " + hum);
 
-longitud1.on('value', function(snapshot) {
-    var long = String(snapshot.val());
-    $('#longitud1').empty();
-    $('#longitud1').append("Longitud: " + long);
-});
-
-humedad1.on('value', function(snapshot) {
-    var hum = String(snapshot.val());
-    $('#humedad1').empty();
-    $('#humedad1').append("Humedad: " + hum);
-});
+        //30 es seco
+        if(parseInt(hum) >= 25){
+            //Poner circulo en rojo
+            color = "#dot" + i; 
+            $(color).css('background-color', '#e62929');
+        }else if(hum == "null"){
+            color = "#dot" + i; 
+            $(color).css('background-color', '#e6df27');
+        }else{
+            color = "#dot" + i; 
+            $(color).css('background-color', 'green');
+        }
+    });
+}
 
 $('.expand').on('click', function () {
-    $('#sensor-data1').slideToggle();
+    var id = $(this).attr("data-sec");
+    $(id).slideToggle();
 })
-
