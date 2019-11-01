@@ -12,7 +12,10 @@ firebase.initializeApp(firebaseConfig);
 
 var database = firebase.database();
 
-//Path to the database data
+/********************
+ * Path to database *
+ ********************/
+
 var n_sensores = firebase.database().ref('N-sensores')
 var sensores = firebase.database().ref('devices');
 
@@ -22,7 +25,9 @@ n_sensores.on('value', function(snapshot) {
     $('#leftcontainerheader').append("Sensores activos: " + sens);
 });
 
-//Retrieving data
+/*******************
+ * Retrieving data *
+ *******************/
 for(let i = 1; i < 4; i++){
     var nombre = "Sensor" + i;
     sensores.child(nombre).child("lat").on('value', function(snapshot) {

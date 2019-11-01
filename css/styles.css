@@ -143,12 +143,6 @@ header{
  * Right container *
  *******************/
 
-/*#mapafeik{
-    width: 100%;
-    max-width: 500px;
-    height: 300px;
-}*/
-
 #map {
     width: 100%;
     max-width: 600px;
