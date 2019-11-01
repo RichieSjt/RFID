@@ -2,7 +2,7 @@ body {
     font-family: 'Roboto Mono', sans-serif;
     margin: auto;
     color: #36332d;
-    background-color: #f0f3bd;
+    background-color: rgb(164, 193, 175);
 }
 
 /****************
@@ -58,12 +58,25 @@ header{
  * Main content *
  ****************/
 #dashboard{
-    max-width: 1200px;
+    text-align: left;
+}
+#center{
+    max-width: 1150px;
     width: 100%;
     display: flex;
     justify-content: center;
 }
+#dashboard_title{
+    width: 170px;
+    height: 35px;
+    background-color: rgb(96, 157, 160);
+    box-shadow: -2px 0 3px #64646490;
+    border-radius: 8px;
+    
+}
 #wrapper{
+    text-align: center;
+    margin: 0 auto;
     font-family: 'Varela Round', sans-serif;
     max-width: 1150px;
     font-size: 25px;
@@ -75,6 +88,7 @@ header{
     flex-direction: row;
     align-items: center;
     flex-wrap: wrap;
+    justify-content: center;
 }
 
 
@@ -86,8 +100,8 @@ header{
     min-width: 250px;
     min-height: 100px;
     height: 100%;
-    margin: 0 40px 0 0;
-    background-color: #f4f5f8;
+    margin: 20px;
+    background-color: #edebe6;
     box-shadow: -2px 0 8px #64646490;
     border-radius: 12px;
 }
@@ -122,6 +136,7 @@ header{
     width: 35px;
 }
 .sensor-data{
+    text-align: left;
     display: none;
     font-size: 15px;
     margin: 0 0 0px 45px;
@@ -143,11 +158,17 @@ header{
  * Right container *
  *******************/
 
+ #right-container{
+    max-width: 650px;
+    width: 100%;
+ }
+
 #map {
     width: 100%;
     max-width: 600px;
     height: 300px;
-    margin-bottom: 30px;
+    margin: 20px;
+    min-width: 150px;
 }
 #floating-panel {
     padding: 5px;
@@ -160,3 +181,10 @@ header{
     left: 25%;
     padding: 5px;
 }
+
+@media screen and (max-width: 1010px) {
+    #map{
+        margin: 20px 0 20px 0;
+    }
+}
+
