@@ -35,12 +35,14 @@ for(let i = 1; i < 4; i++){
         var id = "#latitud" + i;
         $(id).empty();
         $(id).append("Latitud: " + lat);
+        createCoordinate(lat);
     });
     sensores.child(nombre).child("long").on('value', function(snapshot) {
         var long = String(snapshot.val());
         var id = "#longitud" + i;
         $(id).empty();
         $(id).append("Longitud: " + long);
+        createCoordinate(long);
     });
     sensores.child(nombre).child("humedad").on('value', function(snapshot) {
         var hum = String(snapshot.val());
@@ -61,9 +63,27 @@ for(let i = 1; i < 4; i++){
             $(color).css('background-color', 'green');
         }
     });
+    sensores.child(nombre).child("bat").on('value', function(snapshot) {
+        var bateria = String(snapshot.val());
+        if(bateria != "null"){
+            var percentage = bateria + "%"
+            var id = "#bateria" + i;
+            $(id).empty();
+            $(id).append("Batería: " + percentage);
+        }
+        
+        /*var id = "#fill" + i;
+        $(id).css('width', percentage);
+        $(id).css('background-color', "green");
+        */
+    });
 }
 
 $('.expand').on('click', function () {
     var id = $(this).attr("data-sec");
     $(id).slideToggle();
 })
+let latlong = [];
+function createCoordinate(data){
+    latlong.push(data);
+}

@@ -14,11 +14,15 @@ function initMap() {
         map: map
     });
 }
+let points = [];
 function getPoints() {
-    return [
-        new google.maps.LatLng(19.283283, -99.13528),
-        new google.maps.LatLng(19.284283, -99.13628),
-    ];
+    console.log(latlong);
+    for(let i = 0; i < (latlong.length/2); i+=2){
+        console.log(latlong[i] + " " + latlong[i+1]); 
+        points.push(new google.maps.LatLng(latlong[i], latlong[i+1]));
+    }
+    console.log(points);
+    return points;
 }
 
 function getGradient(){
