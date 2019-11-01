@@ -3,7 +3,7 @@ var map, heatmap;
 function initMap() {
     map = new google.maps.Map(document.getElementById('map'), {
         zoom: 17,
-        center: {lat: 19.284283, lng: -99.13628},
+        center: {lat: 19.283583, lng: -99.13626},
         mapTypeId: 'satellite'
     });
 
@@ -14,16 +14,17 @@ function initMap() {
         map: map
     });
 }
-let points = [];
-function getPoints() {
-    console.log(latlong);
-    for(let i = 0; i < (latlong.length/2); i+=2){
-        console.log(latlong[i] + " " + latlong[i+1]); 
-        points.push(new google.maps.LatLng(latlong[i], latlong[i+1]));
-    }
-    console.log(points);
-    return points;
+
+let latlong = [];
+
+function getPoints(){
+    return [
+        new google.maps.LatLng(19.283012, -99.13606),
+        new google.maps.LatLng(19.283725, -99.13626)
+    ]
 }
+
+
 
 function getGradient(){
     return gradient = [

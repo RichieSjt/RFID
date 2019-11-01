@@ -55,6 +55,7 @@ for(let i = 1; i < 4; i++){
             //Poner circulo en rojo
             color = "#dot" + i; 
             $(color).css('background-color', '#e62929');
+            window.alert("La humedad del Sensor " + i + " está en niveles críticos");
         }else if(hum == "null"){
             color = "#dot" + i; 
             $(color).css('background-color', '#e6df27');
@@ -83,7 +84,3 @@ $('.expand').on('click', function () {
     var id = $(this).attr("data-sec");
     $(id).slideToggle();
 })
-let latlong = [];
-function createCoordinate(data){
-    latlong.push(data);
-}

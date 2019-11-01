@@ -9,6 +9,7 @@
     <link href="https://fonts.googleapis.com/css?family=Varela+Round&display=swap" rel="stylesheet">
 
     <link rel="stylesheet" href="css/styles.css">
+    <link rel="stylesheet" href="css/Chart.min.css">
     <title></title>
 </head>
 <body>
@@ -97,6 +98,7 @@
             <div id = "right-container">
                 <div id="map"></div>
             </div>
+            <canvas id="myChart" width="400" height="400"></canvas>
             
         </div>
     </div>
@@ -107,14 +109,17 @@
     <script src="https://www.gstatic.com/firebasejs/7.2.2/firebase-app.js"></script>
     <script src="https://www.gstatic.com/firebasejs/7.2.2/firebase-database.js"></script>
 
+    <script src="js/heatmap.js"></script>
     <script src="js/data.js"></script>
+
+    <script src="js/Chart.min.js"></script>
+    <script src="js/chart-example.js"></script>
 
     <script src="js/disable.js"></script>
     <script type="text/javascript"
         src="https://maps.googleapis.com/maps/api/js?key=YOUR_API_KEY&libraries=visualization">
     </script>
 
-    <script src="js/heatmap.js"></script>
 
     <script async defer
       src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDYQPLKaVjiHkqzhnA8Cpzj3b2rvti8ReU&libraries=visualization&callback=initMap">
